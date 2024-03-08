@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Impressum - TechForward University</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: transparent; /* oder entfernen Sie die Eigenschaft ganz */
+        font-family: 'Arial', sans-serif;
+        position: relative; /* Wichtig für die Positionierung des Pseudo-Elements */
+        margin: 0; /* Entfernt den Standardabstand um das body-Element */
+        padding: 0; /* Entfernt den Standardinnenabstand */
+      }
+
+      .content-container {
+        background-color: #ffffff; /* Farbe für den Inhaltscontainer, damit der Text lesbar bleibt */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Schatten für den Container */
+        margin-top: 20px; /* Abstand nach oben */
+        opacity: 1; /* Stellt sicher, dass der Inhalt vollständig sichtbar ist */
+        position: relative; /* Stellt die Positionierung im Verhältnis zum Hintergrundbild ein */
+        z-index: 1; /* Stellt sicher, dass der Inhaltscontainer über dem Hintergrundbild liegt */
+      }
+
+      .navbar {
+          background-color: #0056b3;
+      }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url("{{ url_for('static', filename='hintergrund.jpg') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.5; /* Passt die Deckkraft des Hintergrundbilds an */
+      z-index: -1; /* Stellt sicher, dass das Hintergrundbild hinter dem Inhalt bleibt */
+  }
+
+      .navbar-brand {
+          color: #ffffff !important;
+      }
+
+      .header-container {
+          background-color: #007bff;
+          color: #ffffff;
+          text-shadow: 2px 2px 10px #000000;
+          padding: 40px 0;
+          background-image: url("{{ url_for('static', filename='Header.jpg') }}");
+          background-size: cover;
+          background-position: center;
+      }
+
+      .main-content {
+          padding: 20px;
+      }
+
+      .university-logo {
+          height: 50px;
+          float: right;
+          margin-right: 20px;
+      }
+
+      .feature-img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      .login-button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: .25rem;
+          text-decoration: none;
+          display: inline-block;
+          margin-right: 10px;
+      }
+
+      nav a {
+          color: #007bff;
+          text-decoration: none;
+          margin: 0 10px;
+      }
+
+      nav a:hover {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">TechForward University</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('impressum') }}">Impressum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('programs')}}">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('alumni')}}">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('research')}}">Research</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('form') }}">Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="content-container">
+  <h1>Impressum</h1>
+  <p>TechForward University is accredited by the Higher Education Commission and is recognized for its rigorous academic standards and research contributions.</p>
+  <p><strong>Address:</strong> 123 Innovation Drive, Tech City, Knowledge State</p>
+  <p><strong>Phone:</strong> +1 (234) 567-890</p>
+  <p><strong>Email:</strong> info@techforward.edu</p>
+  <p>This website is maintained by the TechForward University IT Department.</p>
+  <p>&copy; 2024 TechForward University. All rights reserved.</p>
+  <a href="{{url_for('index') }}">Home</a>
+</div>
+</body>
+</html>

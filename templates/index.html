@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExamSecure - TechForward University</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #0056b3;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        .header-container {
+            background-color: #007bff;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px #000000;
+            padding: 40px 0;
+            background-image: url("{{ url_for('static', filename='Header.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .university-logo {
+            height: 50px;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .feature-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: .25rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        nav a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(category_filter=["infoLogout"]) %}
+      {% if messages %}
+        <div id="flash-messages">
+          {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">TechForward University</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('impressum') }}">Impressum</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('programs')}}">Programs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('alumni')}}">Alumni</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('research')}}">Research</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('form') }}">Form</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<img src="{{ url_for('static', filename='Logo.jpg') }}" alt="TechForward University Logo" class="university-logo">
+
+<div class="header-container text-center">
+  <h1>Welcome to TechForward University</h1>
+  <p>Embracing the future of academic excellence and security.</p>
+</div>
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='Campus.jpg') }}" alt="TechForward Campus" class="feature-img">
+    </div>
+    <div class="col-md-6">
+      <p>
+        Founded on the principles of innovation, integrity, and international excellence, TechForward University has been at the forefront of academic and technological advancements for over a century. With a commitment to creating leaders of tomorrow, our institution prides itself on its world-class faculty, cutting-edge research facilities, and a curriculum that blends rigorous academic study with real-world application.
+    </p>
+    <p>
+        Our diverse community of scholars and students hails from all corners of the globe, fostering a rich cultural exchange and a unique collaborative atmosphere. We offer a breadth of programs that span the arts and humanities, social sciences, natural sciences, engineering, and technology, all designed to challenge our students intellectually and prepare them for a dynamic and ever-evolving future.
+    </p>
+    <p>
+        At TechForward University, we understand that education is about more than just learning; it's about creating impact. Our alumni network extends around the world, leading innovations in their fields and making significant contributions to society. As we look to the future, we continue to push the boundaries of what's possible, driving forward to a brighter and more inclusive tomorrow.
+    </p>
+    
+      <a href="{{ url_for('login') }}" class="login-button">Professor Login</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

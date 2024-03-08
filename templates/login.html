@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login - TechForward University ExamSecure</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f4f4f4;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .form-container {
+        margin-top: 100px;
+    }
+
+    form {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    input[type=text], input[type=password] {
+        width: 250px;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #0056b3;
+        color: white;
+        padding: 15px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    input[type=submit]:hover {
+        background-color: #004494;
+        opacity: 0.9;
+    }
+
+    .help-text {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    nav {
+        margin-top: 40px;
+    }
+
+    nav a {
+        color: #007bff;
+        text-decoration: none;
+        padding: 5px 15px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .flash-messages p {
+        font-size: 18px; /* Größer */
+        font-weight: bold; /* Dicker */
+        color: red; /* Beispiel für eine Farbänderung, optional */
+        padding: 10px;
+        background-color: #f4f4f4; /* Hintergrundfarbe, optional */
+        border: 1px solid #ccc; /* Rand, optional */
+        border-radius: 5px; /* Abgerundete Ecken, optional */
+        margin: 10px 0; /* Abstand oben und unten, optional */
+    }
+</style>
+</head>
+<body>
+        <!-- Flash-Nachricht -->
+    {%with messages = get_flashed_messages(category_filter=["danger"])%}
+        {% if messages %}
+          <div id="flash-messages">
+            {% for message in messages %}
+              <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+    {% endwith %}
+    <div class="form-container">
+        <form action="/login" method="post">
+            <h2>Welcome Back</h2>
+            <p>Please enter your credentials to login.</p>
+            <div>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+            <p class="help-text">Need help? <a href="support.html">Contact Support</a></p>
+        </form>
+    </div>
+    <nav>
+        <a href="{{url_for('index')}}">Home</a> |
+        <a href="{{url_for('about')}}">About Us</a> |
+        <a href="{{url_for('impressum')}}">Impressum</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us - TechForward University</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: transparent;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        position: relative; /* Wichtig für die Positionierung des Pseudo-Elements */
+        margin: 0; /* Entfernt den Standardabstand um das body-Element */
+        padding: 0; /* Entfernt den Standardinnenabstand */
+      }
+      .content-container {
+        background-color: #ffffff; /* Farbe für den Inhaltscontainer, damit der Text lesbar bleibt */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Schatten für den Container */
+        margin-top: 20px; /* Abstand nach oben */
+        opacity: 1; /* Stellt sicher, dass der Inhalt vollständig sichtbar ist */
+        position: relative; /* Stellt die Positionierung im Verhältnis zum Hintergrundbild ein */
+        z-index: 1; /* Stellt sicher, dass der Inhaltscontainer über dem Hintergrundbild liegt */
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url("{{ url_for('static', filename='hintergrund.jpg') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.5; /* Passt die Deckkraft des Hintergrundbilds an */
+      z-index: -1; /* Stellt sicher, dass das Hintergrundbild hinter dem Inhalt bleibt */
+  }
+
+      .navbar {
+          background-color: #0056b3;
+      }
+
+      .navbar-brand {
+          color: #ffffff !important;
+      }
+
+      .header-container {
+          background-color: #007bff;
+          color: #ffffff;
+          text-shadow: 2px 2px 10px #000000;
+          padding: 40px 0;
+          background-image: url("{{ url_for('static', filename='Header.jpg') }}");
+          background-size: cover;
+          background-position: center;
+      }
+
+      .main-content {
+          padding: 20px;
+      }
+
+      .university-logo {
+          height: 50px;
+          float: right;
+          margin-right: 20px;
+      }
+
+      .feature-img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      .login-button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: .25rem;
+          text-decoration: none;
+          display: inline-block;
+          margin-right: 10px;
+      }
+
+      nav a {
+          color: #007bff;
+          text-decoration: none;
+          margin: 0 10px;
+      }
+
+      nav a:hover {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">TechForward University</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('impressum') }}">Impressum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('programs')}}">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('alumni')}}">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('research')}}">Research</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('form') }}">Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="content-container">
+  <h1>About TechForward University</h1>
+  <p>
+    Spanning over a century, TechForward University stands as a pillar of educational innovation, academic rigor, and a crucible for future leaders and change-makers. Our historical legacy is built upon the relentless pursuit of knowledge, fostering intellectual growth, and a relentless drive towards societal betterment.
+  </p>
+  <p>
+    Our campus is an epitome of academic vibrancy, housing state-of-the-art research facilities, libraries enriched with global knowledge, and spaces that inspire creativity and collaboration. TechForward University is not just a place to learn—it's a realm where the leaders of tomorrow are nurtured, challenged, and primed for excellence.
+  </p>
+  <p>
+    With a faculty comprising the crème de la crème of academicians, scholars, and industry pioneers, our students are guaranteed mentorship and guidance from the best minds in their fields. Our diverse academic community is a melting pot of cultures, ideas, and innovations, driving forward the frontiers of science, technology, humanities, and the arts.
+  </p>
+  <p>
+    TechForward University offers a wide array of programs ranging from undergraduate to post-doctoral fellowships, each designed to transcend traditional learning boundaries and provide a global perspective. We are proud of our alumni, who are accoladed leaders, innovators, and visionaries making impactful strides across industries and communities worldwide.
+  </p>
+  <p>
+    We invite you to explore more about our esteemed institution, our academic offerings, our research impact, and the endless possibilities that await at TechForward University. For detailed information about our programs, admission criteria, and the application process, please feel free to <a href="contact.html">contact our admissions office</a>.
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programs - TechForward University</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+          background-color: #f8f9fa;
+          font-family: 'Arial', sans-serif;
+      }
+
+      .navbar {
+          background-color: #0056b3;
+      }
+
+      .navbar-brand {
+          color: #ffffff !important;
+      }
+
+      .header-container {
+          background-color: #007bff;
+          color: #ffffff;
+          text-shadow: 2px 2px 10px #000000;
+          padding: 40px 0;
+          background-image: url("{{ url_for('static', filename='Header.jpg') }}");
+          background-size: cover;
+          background-position: center;
+      }
+
+      .main-content {
+          padding: 20px;
+      }
+
+      .university-logo {
+          height: 50px;
+          float: right;
+          margin-right: 20px;
+      }
+
+      .feature-img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      .login-button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: .25rem;
+          text-decoration: none;
+          display: inline-block;
+          margin-right: 10px;
+      }
+
+      nav a {
+          color: #007bff;
+          text-decoration: none;
+          margin: 0 10px;
+      }
+
+      nav a:hover {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">TechForward University</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('impressum') }}">Impressum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('programs')}}">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('alumni')}}">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('research')}}">Research</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('form') }}">Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="header-container text-center">
+  <h1>Our Academic Programs</h1>
+  <p>Innovative and Future-Ready</p>
+</div>
+
+<div class="container main-content">
+  <p>
+    At TechForward University, we offer a range of undergraduate, graduate, and professional programs designed to prepare students for the challenges of tomorrow. Our curriculum is constantly updated to reflect the latest developments in science, technology, arts, and humanities, ensuring that our students are well-equipped for their future careers.
+  </p>
+  <p>
+    <strong>Undergraduate Programs:</strong> Our bachelor's degrees in Engineering, Computer Science, Business Administration, and more, are structured to provide a solid foundation in theoretical knowledge, practical skills, and real-world experience through internships and research projects.
+  </p>
+  <p>
+    <strong>Graduate Programs:</strong> For students seeking advanced study, our master's and doctoral programs in fields like Artificial Intelligence, Renewable Energy, Psychological Research, and International Relations offer an opportunity to engage in cutting-edge research and develop specialized expertise.
+  </p>
+  <p>
+    <strong>Professional Development:</strong> We also provide a range of certificate programs and continuing education courses for professionals looking to enhance their skills or pivot their careers towards emerging sectors.
+  </p>
+  <p>
+    Discover the program that aligns with your aspirations and start your journey to becoming a leader of tomorrow.
+  </p>
+</div>
+
+<!-- Existing Scripts Here -->
+</body>
+</html>
